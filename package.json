@@ -10,7 +10,7 @@
     "url": ""
   },
   "scripts": {
-    "start": "webpack-dev-server -d --hot --inline"
+    "start": "webpack-dev-server -d --hot --inline --history-api-fallback"
   },
   "dependencies": {
     "frux": "git+ssh://git@github.com/raulmatei/frux.git#develop",

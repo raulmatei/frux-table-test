@@ -1,7 +1,7 @@
 import frux from 'frux';
-import React from 'react';
 import content from './modules/content';
-import TableView from './components/table-view';
+import { browserHistory } from 'react-router';
+import { initializeRouter } from './router';
 
 export const { actions, getters } = frux.initialize({
   options: { debug: true },
@@ -9,6 +9,8 @@ export const { actions, getters } = frux.initialize({
 });
 
 export function initialize(options) { 
-  console.log(options);
-  frux.mount(<TableView/>);
+  const history = browserHistory;
+  const router = initializeRouter({ history });
+
+  frux.mount(router);
 };
