@@ -1,11 +1,6 @@
-import React from 'react';
+import React, { Children } from 'react';
 
-const Root = (props) => {
-  return (
-    <div>{props.children}</div>
-  );
-};
+const Root = ({ children }) => Children.only(children);
 
 Root.displayName = 'Root';
-
 export default Root;
