@@ -195,7 +195,7 @@ class TableView extends Component {
 
         <table style={tableStyles}>
           <tbody>
-            <tr>
+            <tr style={{ fontWeight: 'bold' }}>
               <td style={{...styles, width: 20 }}>
                 <SelectAll
                   onChange={this.handleSelectAll.bind(this)}
