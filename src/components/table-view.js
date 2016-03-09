@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import frux from 'frux';
 import { actions } from '../main';
 import Highlight from './highlight';
+import TableRow from './table-row';
 import SelectAll from './select-all';
 import Checkbox from './checkbox';
 
@@ -227,9 +228,10 @@ class TableView extends Component {
                 }
 
                 return (
-                  <tr
-                    id={`row-${row.get('id')}`}
+                  <TableRow
+                    id={`row-${id}`}
                     key={`row-${index}`}
+                    isSelected={isSelected}
                     onClick={this.handleRowSelect.bind(this)}
                     style={ index % 2 ? { ...itemStyle, backgroundColor: '#f5f5f5' } : itemStyle }
                   >
@@ -254,7 +256,7 @@ class TableView extends Component {
                     <td style={itemStyle}>
                       <Highlight label={dateModified}/>
                     </td>
-                  </tr>
+                  </TableRow>
                 );
               })
             }
