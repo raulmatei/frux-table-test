@@ -1,5 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
+var parseArgs = require('minimist');
+
+var argv = parseArgs(process.argv.slice(2));
 
 module.exports = {
   entry: {
@@ -27,7 +30,9 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('development')
+        'NODE_ENV': argv.env === 'development' ?
+            JSON.stringify('development') :
+            JSON.stringify('production')
       }
     })
   ]
