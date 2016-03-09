@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 import { initializeRouter } from './router';
 
 export const { actions, getters } = frux.initialize({
-  options: { debug: true },
+  options: { debug: process.env.NODE_ENV === 'development' },
   content
 });
 
