@@ -32,10 +32,9 @@ function handleToggleSelect(currentState, payload) {
 }
 
 function handleFilterResults(currentState, payload) {
-  let { term } = payload;
-  let filtered = currentState.get('filteredResults');
+  const { term } = payload;
 
-  filtered = currentState.get('data').filter((item) => {
+  let filtered = currentState.get('data').filter((item) => {
     const id = item.get('id').toString().toLowerCase();
     const name = item.get('name').toLowerCase();
     const owner = item.get('owner').toLowerCase();
@@ -51,11 +50,11 @@ function handleFilterResults(currentState, payload) {
     );
   });
 
-  return (
-    currentState
+  return currentState.withMutations((state) => {
+    return state
       .set('filteredResults', filtered)
       .set('term', term)
-  );
+  });
 }
 
 
