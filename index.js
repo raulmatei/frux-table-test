@@ -1,3 +1,13 @@
-import * as app from './src/main';
+import frux from 'frux';
+import * as main from './src/main';
 
-window.app = app;
+const App = {
+  actions: main.actions,
+  initialize: main.initialize
+};
+
+if (process.env.NODE_ENV === 'development') {
+  App.serialize = frux.serialize;
+}
+
+global.app = App;
