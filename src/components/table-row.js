@@ -4,7 +4,10 @@ class TableRow extends Component {
   static displayName = 'TableRow';
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.isSelected !== this.props.isSelected;
+    const isNewTermDiff = nextProps.term !== this.props.term;
+    const isSelectedDiff = nextProps.isSelected !== this.props.isSelected;
+
+    return isSelectedDiff || isNewTermDiff;
   }
 
   render() {

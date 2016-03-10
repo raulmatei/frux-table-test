@@ -231,6 +231,7 @@ class TableView extends Component {
                   <TableRow
                     id={`row-${id}`}
                     key={`row-${index}`}
+                    term={term}
                     isSelected={isSelected}
                     onClick={this.handleRowSelect.bind(this)}
                     style={ index % 2 ? { ...itemStyle, backgroundColor: '#f5f5f5' } : itemStyle }
