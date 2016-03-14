@@ -14,7 +14,7 @@
     "build": "webpack -p"
   },
   "dependencies": {
-    "frux": "git+ssh://git@github.com/raulmatei/frux.git#develop",
+    "frux": "^0.2.1",
     "invariant": "^2.2.0",
     "nuclear-js": "^1.3.0",
     "nuclear-js-react-addons": "^0.3.1",
